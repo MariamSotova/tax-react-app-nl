@@ -20,8 +20,8 @@ export const Income = () => {
         <div className="tax-wrp">
           <h1>Dutch Income Tax Calculator</h1>
           <p>
-            If your annual salary is less than/or equal to 35129 € - 9.45 % per
-            year, <br />
+            If your annual salary is less than/or equal to
+            <br /> 35129 € - 9.45 % per year, <br />
             less than/equal to 68507 € - 37.1 %, <br />
             wages above 68507 € are taxed at 49.5 % per year.
           </p>
@@ -42,7 +42,7 @@ export const Income = () => {
           <div id="income-tax">{tax === 0 ? null : tax}</div>
         </div>
         <button onClick={onSubmit} className="count" id="count">
-          count €
+          count
         </button>
       </div>
     </div>
