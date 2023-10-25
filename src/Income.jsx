@@ -15,34 +15,36 @@ export const Income = () => {
   }, [salary]);
 
   return (
-    <div className="wrapper-tax">
-      <div className="tax-wrp">
-        <h1>Dutch Income Tax Calculator</h1>
-        <p>
-          If your annual salary is less than/or equal to 35129 € - 9.45 % per
-          year, <br />
-          less than/equal to 68507 € - 37.1 %, <br />
-          wages above 68507 € are taxed at 49.5 % per year.
-        </p>
-        <h2>Write down your salary for the year in €</h2>
+    <div className="income">
+      <div className="wrapper-tax">
+        <div className="tax-wrp">
+          <h1>Dutch Income Tax Calculator</h1>
+          <p>
+            If your annual salary is less than/or equal to 35129 € - 9.45 % per
+            year, <br />
+            less than/equal to 68507 € - 37.1 %, <br />
+            wages above 68507 € are taxed at 49.5 % per year.
+          </p>
+          <p className="text">Write down your salary for the year in €</p>
 
-        <input
-          onChange={onSalaryChange}
-          value={salary}
-          type="number"
-          min="0"
-          autoFocus
-          required
-          id="input-salary"
-        />
+          <input
+            onChange={onSalaryChange}
+            value={salary}
+            type="number"
+            min="0"
+            autoFocus
+            required
+            id="input-salary"
+          />
+        </div>
+        <div className="tax-wrp">
+          <p className="text">This is the amount you pay per year.</p>
+          <div id="income-tax">{tax === 0 ? null : tax}</div>
+        </div>
+        <button onClick={onSubmit} className="count" id="count">
+          count €
+        </button>
       </div>
-      <div className="tax-wrp">
-        <p>This is the amount you pay per year.</p>
-        <div id="income-tax">{tax === 0 ? null : tax}</div>
-      </div>
-      <button onClick={onSubmit} className="count" id="count">
-        count €
-      </button>
     </div>
   );
 };
